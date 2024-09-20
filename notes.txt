@@ -1,0 +1,156 @@
+displya: grid;
+colums , rows 
+gap - gap between colum and row = 1. column gap ; 2, row-gap ; 3. gap.
+-------------------------------------------------------
+grid-lines: 1. column lines 
+            2. row-lines
+ex: grid-column: start/end ; grid-column-start:
+grid-area:  grid-row-start /grid-column-start / grid-row-end/grid-column-end;
+---------------------------------------------------------
+grid-auo-columns , grid-auto-rows: specificies default size of particuar row and column.
+grid-auto-flow :  Specifies how auto-placed items are inserted in the grid
+----------------------------------------------
+grid-template-rows: specify size of rows in grid layout.
+grid-template-coluns: specfy sie of columns in grid layout.
+grid-template-areas: Specifies how to display columns and rows, using named grid items
+grid-template(shortcut): grid-template-rows, grid-template-columns, grid-areas;
+
+-----------------------------------------------------------------
+
+
+grid-tmplate-columns: auto auto auto auto; = width extra width go out
+grid-template-rows: 40px 30px auto; etc = height add more.
+justify-contentt: space-evenly , around, between ,satrt , end etsc
+but justify content works only ig grid width is less than the ontiner width;
+align-cotent: grid total height j=has to be less than containr height.
+
+
+
+justify cotent - column
+space-around - rows
+---------------------
+grid-template-areas: row1
+                      row2 inside values all befoere u need to define which iteam has which grid area
+
+"1 2 3 4 1"
+"2 3 4 2 4";  means in 1 st row column1 1 2 3 4 is abvaialble.
+      
+
+
+
+
+
+
+
+
+Display grid is a CSS property that creates a grid layout,  - 2 dimensional layout
+arranging items into a grid of rows and columns.
+
+grid-template-rows: Defines the height of each row in the grid.
+grid-template-columns: Defines the width of each column in the grid.
+grid-template-areas: Creates named grid areas for specific items.
+grid-gap: Sets the gap between grid items and tracks.
+grid-auto-rows: Specifies the height of automatically generated rows.
+grid-auto-columns: Specifies the width of automatically generated columns.
+
+grid-template-columns: repeat(4, 300px) - fixed value instead use 1fr . but still we get 4 boxes only . 
+for this we use 
+
+grid-template-columns: repeat(auto-fill, 300px) - when repsonsive it become 1 column then 2 based on the size.
+to centre at middle:  justify-content : center;
+
+but still we get space some for that to avoid we can use :
+
+grid-template-columns: repeat(auto-fill , minmax( 300px , 1fr) - min value range max value range 
+means if we have enough space it can grow until 1 fr.
+
+
+I'd be glad to explain the properties related to display grid in detail:
+
+**1. `display: grid;`**
+
+- This declaration sets the display type of an element to grid, enabling it to function as a grid container. It's the fundamental property for creating grid layouts.
+
+**2. `grid-template-rows`**
+
+- Defines the height of each row in the grid.
+- Values can be specified in pixels, percentages, `fr` units (flexible fractions), or `minmax()` functions.
+- Example:
+  ```css
+  .container {
+    display: grid;
+    grid-template-rows: 100px 200px auto;
+  }
+  ```
+  This creates a grid with three rows: the first is 100 pixels tall, the second is 200 pixels tall, and the third automatically adjusts to fill the remaining space.
+
+**3. `grid-template-columns`**
+
+- Defines the width of each column in the grid.
+- Values can be specified using the same units as `grid-template-rows`.
+- Example:
+  ```css
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  ```
+  This creates a grid with two columns: the first takes up one-third of the available space, and the second takes up two-thirds.
+
+**4. `grid-template-areas`**
+
+- Creates named grid areas for specific items.
+- Values are specified as a string of names separated by spaces.
+- Example:
+  ```css
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px auto;
+    grid-template-areas:
+      "header header header"
+      "main aside aside";
+  }
+  ```
+  This creates a grid with three columns and two rows. The items with the class names `header`, `main`, and `aside` will be placed in the corresponding grid areas.
+
+**5. `grid-gap`**
+
+- Sets the gap between grid items and tracks.
+- Can be specified as a single value for both row and column gaps, or as two values separated by a space for different row and column gaps.
+- Example:
+  ```css
+  .container {
+    display: grid;
+    grid-gap: 20px;
+  }
+  ```
+  This adds a 20-pixel gap between each item and track in the grid.
+
+**6. `grid-auto-rows`**
+
+- Specifies the height of automatically generated rows.
+- Values can be specified using the same units as `grid-template-rows`.
+- Example:
+  ```css
+  .container {
+    display: grid;
+    grid-auto-rows: 100px;
+  }
+  ```
+  This sets the height of any automatically generated rows in the grid to 100 pixels.
+
+**7. `grid-auto-columns`**
+
+- Specifies the width of automatically generated columns.
+- Values can be specified using the same units as `grid-template-columns`.
+- Example:
+  ```css
+  .container {
+    display: grid;
+    grid-auto-columns: 200px;
+  }
+  ```
+  This sets the width of any automatically generated columns in the grid to 200 pixels.
+
+These properties provide a powerful foundation for creating flexible and responsive grid layouts in CSS. By understanding and effectively using these properties, you can design complex and visually appealing layouts for your web applications.

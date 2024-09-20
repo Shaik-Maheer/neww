@@ -1,0 +1,48 @@
+.header{
+    height: 500px;
+    border: 3px solid black;
+    width:500px;
+    display: grid;
+    /* grid-template-columns: auto auto auto  auto auto ; */
+    grid-template-columns: 20px 40px 200px auto; 
+    /* grid-template-columns: repeat(4, 1fr); */
+    /* width increase more then comes out  */
+    /* grid-template-rows: auto 30px auto 400px; */
+    /* adds new row */
+    justify-content: space-between;
+    /* grid-template-columns: auto auto; */
+     /* grid-template-rows: auto auto; */
+    grid-template-columns: auto auto auto;
+    /* align-content: space-around;  */
+
+    grid-template-areas: "one one one one"
+    "two two two two";
+
+
+}
+
+.a{
+    background-color: aqua; 
+}
+.b{
+    background-color:pink;
+}
+.c{
+    background-color:purple;  
+}
+.d{
+    background-color: plum;
+    
+   
+} 
+/* #green{
+    grid-area: one;
+    background-color: green;
+}
+#pink{
+    grid-area: two;
+    background-color: palevioletred;
+} */
+/* grid-area:row-start/ column-start/row-end/column-end;
+grid-column/ grid-row:start/end;
+or use specific terms grid-row-start , grid-column-end etc.. */
